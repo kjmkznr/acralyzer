@@ -43,6 +43,7 @@
         $scope.availableFilters = [
             $scope.noFilter,
             {value: "appver", label: "Application version"},
+            {value: "appvercode", label: "Application version code"},
             {value: "androidver", label: "Android version"}
         ];
         $scope.filterName = $scope.noFilter;
@@ -108,6 +109,8 @@
                 var getFilteredValues;
                 if($scope.filterName.value === "androidver") {
                     getFilteredValues = ReportsStore.androidVersionsList;
+                } else if ($scope.filterName.value === "appvercode") {
+                    getFilteredValues = ReportsStore.appVersionCodesList;
                 } else if ($scope.filterName.value === "appver") {
                     getFilteredValues = ReportsStore.appVersionsList;
                 }
